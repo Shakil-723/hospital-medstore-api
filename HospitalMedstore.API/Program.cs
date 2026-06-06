@@ -34,7 +34,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact", policy =>
     {
-        policy.WithOrigins("http://localhost:5174", "http://localhost:5173")
+        policy.WithOrigins(
+            "http://localhost:5174",
+            "http://localhost:5173",
+            "https://hospital-medstore.vercel.app",
+            "https://hospital-medstore-bw3x1j5cw-md-shakil-s-projects.vercel.app"
+        )
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
